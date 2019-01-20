@@ -19,4 +19,4 @@ COPY --from=builder /go/src/github.com/percona/mongodb_exporter/mongodb_exporter
 
 ENTRYPOINT [ "mongodb_exporter" ]
 
-CMD ["-web.listen-address", ":9104", "-mongodb.uri", "mongodb://172.17.0.1:27017"]
+CMD ["-web.listen-address", ":9104", "-mongodb.uri", "mongodb://172.17.0.1:27017", "-collect.database", "true"]
