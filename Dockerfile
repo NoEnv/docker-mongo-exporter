@@ -2,14 +2,14 @@ FROM golang:alpine as builder
 
 RUN set -x \
  && apk --no-cache add git make \
- && git clone --branch v0.8.0 --depth 1 https://github.com/percona/mongodb_exporter.git /go/src/github.com/percona/mongodb_exporter \
+ && git clone --branch v0.9.0 --depth 1 https://github.com/percona/mongodb_exporter.git /go/src/github.com/percona/mongodb_exporter \
  && cd /go/src/github.com/percona/mongodb_exporter \
  && make build
 
 FROM alpine:3.9
 
 LABEL maintainer "NoEnv"
-LABEL version "0.8.0"
+LABEL version "0.9.0"
 LABEL description "Nomad Agent as Docker Image"
 
 EXPOSE 9104
