@@ -6,10 +6,10 @@ RUN set -x \
  && cd /go/src/github.com/percona/mongodb_exporter \
  && make build
 
-FROM alpine:3.10
+FROM alpine:3.11
 
 LABEL maintainer "NoEnv"
-LABEL version "0.10.0"
+LABEL version "0.10.1"
 LABEL description "Nomad Agent as Docker Image"
 
 EXPOSE 9104
