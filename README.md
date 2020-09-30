@@ -1,3 +1,5 @@
+[![Docker Pulls](https://badgen.net/docker/pulls/noenv/mongo-exporter)](https://hub.docker.com/r/noenv/mongo-exporter)
+
 ## docker-mongo-exporter
 
 #### Description
