@@ -1,4 +1,4 @@
-FROM golang:alpine as builder
+FROM golang:1.15-alpine as builder
 
 RUN set -x \
  && apk --no-cache add git make \
@@ -15,8 +15,8 @@ LABEL description "Mongo Exporter as Docker Image"
 EXPOSE 9104
 
 RUN apk --no-cache add --update ca-certificates
-COPY --from=builder /go/src/github.com/percona/mongodb_exporter/bin/mongodb_exporter /bin/mongodb_exporter
+COPY --from=builder /go/src/github.com/percona/mongodb_exporter/mongodb_exporter /bin/mongodb_exporter
 
 ENTRYPOINT [ "mongodb_exporter" ]
 
-CMD ["--web.listen-address", ":9104", "--mongodb.uri", "mongodb://172.17.0.1:27017/?tls=true&tlsInsecure=true", "--collect.database"]
+CMD ["--web.listen-address", ":9104", "--mongodb.uri", "mongodb://172.17.0.1:27017/?tls=true&tlsInsecure=true", "--mongodb.global-conn-pool"]
