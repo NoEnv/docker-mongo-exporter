@@ -6,7 +6,7 @@ RUN set -x \
  && cd /go/src/github.com/percona/mongodb_exporter \
  && make build
 
-FROM alpine:3.12
+FROM alpine:3.13
 
 LABEL maintainer "NoEnv"
 LABEL version "0.20.1"
