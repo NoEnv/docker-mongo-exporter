@@ -14,7 +14,7 @@ most simple way of running the container
 
 advanced usage
 
-    docker run --name prom-me -p 9123:9123 noenv/mongo-exporter -web.listen-address=:9123 -mongodb.uri=mongodb://127.0.0.1:27017
+    docker run --name prom-me -p 9123:9123 noenv/mongo-exporter --web.listen-address=:9123 --mongodb.uri=mongodb://127.0.0.1:27017
 
 #### Source
 
