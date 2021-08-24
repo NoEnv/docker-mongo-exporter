@@ -1,4 +1,5 @@
 [![Docker Pulls](https://badgen.net/docker/pulls/noenv/mongo-exporter)](https://hub.docker.com/r/noenv/mongo-exporter)
+[![build](https://github.com/NoEnv/docker-mongo-exporter/actions/workflows/build.yml/badge.svg)](https://github.com/NoEnv/docker-mongo-exporter/actions/workflows/build.yml)
 
 ## docker-mongo-exporter
 
