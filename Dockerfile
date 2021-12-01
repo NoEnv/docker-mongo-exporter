@@ -2,14 +2,14 @@ FROM golang:1.16-alpine3.14 as builder
 
 RUN set -x \
  && apk --no-cache add git make \
- && git clone --branch v0.20.9 --depth 1 https://github.com/percona/mongodb_exporter.git /go/src/github.com/percona/mongodb_exporter \
+ && git clone --branch v0.30.0 --depth 1 https://github.com/percona/mongodb_exporter.git /go/src/github.com/percona/mongodb_exporter \
  && cd /go/src/github.com/percona/mongodb_exporter \
  && make build
 
 FROM alpine:3.14
 
 LABEL maintainer "NoEnv"
-LABEL version "0.20.9"
+LABEL version "0.30.0"
 LABEL description "Mongo Exporter as Docker Image"
 
 EXPOSE 9104
