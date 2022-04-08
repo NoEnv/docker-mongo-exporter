@@ -1,15 +1,15 @@
-FROM golang:1.17-alpine3.15 as builder
+FROM golang:1.18-alpine3.15 as builder
 
 RUN set -x \
  && apk --no-cache add git make \
- && git clone --branch v0.31.1 --depth 1 https://github.com/percona/mongodb_exporter.git /go/src/github.com/percona/mongodb_exporter \
+ && git clone --branch v0.31.2 --depth 1 https://github.com/percona/mongodb_exporter.git /go/src/github.com/percona/mongodb_exporter \
  && cd /go/src/github.com/percona/mongodb_exporter \
  && make build
 
 FROM alpine:3.15
 
 LABEL maintainer "NoEnv"
-LABEL version "0.31.1"
+LABEL version "0.31.2"
 LABEL description "Mongo Exporter as Docker Image"
 
 EXPOSE 9104
