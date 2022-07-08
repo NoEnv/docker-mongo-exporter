@@ -9,7 +9,7 @@ RUN set -x \
 FROM alpine:3.16
 
 LABEL maintainer "NoEnv"
-LABEL version "0.32.0"
+LABEL version "0.33.0"
 LABEL description "Mongo Exporter as Docker Image"
 
 EXPOSE 9104
