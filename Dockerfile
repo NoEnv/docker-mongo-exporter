@@ -2,7 +2,7 @@ FROM golang:1.18-alpine3.16 as builder
 
 RUN set -x \
  && apk --no-cache add git make \
- && git clone --branch v0.32.0 --depth 1 https://github.com/percona/mongodb_exporter.git /go/src/github.com/percona/mongodb_exporter \
+ && git clone --branch v0.33.0 --depth 1 https://github.com/percona/mongodb_exporter.git /go/src/github.com/percona/mongodb_exporter \
  && cd /go/src/github.com/percona/mongodb_exporter \
  && make build
 
