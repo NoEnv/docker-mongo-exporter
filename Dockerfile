@@ -1,4 +1,4 @@
-FROM golang:1.19-alpine3.16 as builder
+FROM golang:1.19-alpine3.17 as builder
 
 RUN set -x \
  && apk --no-cache add git make \
@@ -6,10 +6,10 @@ RUN set -x \
  && cd /go/src/github.com/percona/mongodb_exporter \
  && make build
 
-FROM alpine:3.16
+FROM alpine:3.17
 
 LABEL maintainer "NoEnv"
-LABEL version "0.35.0"
+LABEL version "0.36.0"
 LABEL description "Mongo Exporter as Docker Image"
 
 EXPOSE 9104
