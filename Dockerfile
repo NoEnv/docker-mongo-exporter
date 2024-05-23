@@ -1,4 +1,4 @@
-FROM golang:1.21-alpine3.18 as builder
+FROM golang:1.22-alpine3.20 as builder
 
 RUN set -x \
  && apk --no-cache add git make \
@@ -6,7 +6,7 @@ RUN set -x \
  && cd /go/src/github.com/percona/mongodb_exporter \
  && make build
 
-FROM alpine:3.18
+FROM alpine:3.20
 
 LABEL maintainer "NoEnv"
 LABEL version "0.40.0"
